@@ -1,0 +1,38 @@
+@model IEnumerable<ComputerPartsStore.Models.ComputerPart>
+
+@{
+    ViewData["Title"] = "Computer Parts List";
+}
+
+<h1>Computer Parts</h1>
+<p>
+    <a asp-action="Create" class="btn btn-primary">Add New Computer Part</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Stock</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var part in Model)
+        {
+            <tr>
+                <td>@part.Name</td>
+                <td>@part.Description</td>
+                <td>@part.Price</td>
+                <td>@part.Stock</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@part.Id">Details</a> |
+                    <a asp-action="Edit" asp-route-id="@part.Id">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@part.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="container text-center">
+    <h1>Welcome to the Possis Computer Parts Store!</h1>
+    <p class="lead">
+        Your one-stop shop for all computer components and accessories.
+    </p>
+    <p>
+        Explore our extensive collection of computer parts or add a new part to our inventory.
+    </p>
+    <div class="mt-4">
+        <a class="btn btn-primary btn-lg" href="@Url.Action("Index", "ComputerParts")">Browse Computer Parts</a>
+        <a class="btn btn-secondary btn-lg" href="@Url.Action("Create", "ComputerParts")">Add a New Part</a>
+    </div>
+</div>
