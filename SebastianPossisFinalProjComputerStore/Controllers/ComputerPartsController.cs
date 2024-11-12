@@ -100,5 +100,23 @@ namespace ComputerPartsStore.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
+
+        // GET: ComputerParts/Details/5
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var computerPart = await _context.ComputerParts
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (computerPart == null)
+            {
+                return NotFound();
+            }
+
+            return View(computerPart); // Renders the Details.cshtml view for the specific part
+        }
     }
 }
