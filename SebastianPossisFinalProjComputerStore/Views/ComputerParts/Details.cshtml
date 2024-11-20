@@ -20,7 +20,15 @@
         <dd class="col-sm-10">@Model.Price</dd>
 
         <dt class="col-sm-2">Stock</dt>
-        <dd class="col-sm-10">@Model.Stock</dd>
+        <dd class="col-sm-10">
+            <span class="@(
+                Model.Stock < 5 ? "badge bg-danger" : 
+                Model.Stock <= 20 ? "badge bg-warning" : 
+                "badge bg-success"
+            )">
+                @Model.Stock
+            </span>
+        </dd>
     </dl>
 </div>
 

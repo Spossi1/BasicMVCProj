@@ -26,7 +26,15 @@
                 <td>@part.Name</td>
                 <td>@part.Description</td>
                 <td>@part.Price</td>
-                <td>@part.Stock</td>
+                <td>
+                    <span class="@(
+                        part.Stock < 5 ? "badge bg-danger" : 
+                        part.Stock <= 15 ? "badge bg-warning" : 
+                        "badge bg-success"
+                    )">
+                        @part.Stock
+                    </span>
+                </td>
                 <td>
                     <a asp-action="Details" asp-route-id="@part.Id">Details</a> |
                     <a asp-action="Edit" asp-route-id="@part.Id">Edit</a> |
